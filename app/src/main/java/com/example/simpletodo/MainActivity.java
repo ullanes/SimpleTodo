@@ -43,6 +43,7 @@ public class MainActivity<Protected> extends AppCompatActivity {
         rvItems = findViewById(R.id.rvItems);
 
 
+
         loadItems();
 
 
@@ -83,6 +84,7 @@ public class MainActivity<Protected> extends AppCompatActivity {
                itemsAdapter.notifyItemInserted(items.size() - 1);
                etItem.setText("");
                Toast.makeText(getApplicationContext(),"Item was added", Toast.LENGTH_SHORT).show();
+               saveItems();
             }
         });
 
@@ -120,6 +122,7 @@ public class MainActivity<Protected> extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("MainActivity", "Error readying items", e);
             items = new ArrayList<>();
+
         }
     }
 
